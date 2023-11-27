@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dapur Kos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-rKk/RU4LR0rMD+J2XWoZHcGbeEew9UZdt7fN/knNq5clR5JNQFUnP7uU6tHdmjPW" crossorigin="anonymous">
-
+    <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,10 +13,24 @@
         <div class="logo">
                 <img src="cp-white2.png" alt="dapurkos" width=200px; height="100px"> 
         </div>
-        <div class="search-box">
+        </form>
+        <form action="search" method="post" class="search-box">
             <input type="text" placeholder="Mau makan apa hari ini...">
-            <button id="search-btn"><i class="fas fa-search"></i></button>
-          </div> 
+            <button id="search-btn" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          
+          <nav class="menu" id="menu">
+            <a href="#">Beranda</a>
+            <a href="#">Tentang Kami</a>
+            <a href="#">Resep</a>
+          </nav>
+          
       </header>
 
       <div class="wrapper">
@@ -31,6 +45,6 @@
             </div>      
         </section>
     </div>
-          
+
 </body>
 </html>

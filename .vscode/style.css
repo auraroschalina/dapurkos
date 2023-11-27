@@ -33,11 +33,8 @@ body {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    position: fixed;
-    width: 100%;
-    z-index: 1000; /* Pastikan z-index agar di atas elemen lain */
+
   }
-  
   
   .img {
     max-width: 100%;
@@ -73,58 +70,14 @@ body {
   }
   button#search-btn::before {
     content: "";
-    background-image: url('search.png');
+    background-image: url('PRESENTATION\ 2022\ \(2\)\ 1.png');
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
     width: 15px;
     height: 15px;
-    align-items: center; }
+        align-items: center; }
   
-
-    .hamburger {
-      width: 30px;
-      height: 30px;
-      background-color: #5F1419;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .bar {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin-bottom: 5px;
-    }
-
-    .bar:nth-child(2) {
-      margin-bottom: 0;
-    }
-
-
-    .menu {
-      background-color: rgba(0, 0, 0, 0.8);
-      position: absolute;
-      top: 60px; 
-      right: 15px;
-      padding: 15px;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      padding: 10px;
-      font-size: 18px;
-      margin: 5px;
-    }
-
-    .menu a:hover {
-      background-color: rgba(0, 0, 0, 0.6);
-    }
 
   .wrapper {
     width: 100%;
