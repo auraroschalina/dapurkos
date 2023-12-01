@@ -162,6 +162,7 @@ p {
   color: #5F1419;
 }
 
+
 .button {
 background-color: #FFC174;
 color: #5F1419;
@@ -183,7 +184,6 @@ text-align: center;
   height: 200px;
   margin-left: 650px;
   text-align: justify;
-
 }
 
 #tentangkami{
@@ -217,4 +217,24 @@ text-align: center;
   position: absolute;
   right: 0;
   transform: translate(0, -50%);
+}
+
+.container {
+  margin-top: 300px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between; 
+  padding-top: 100px;
+}
+
+.gambar-kiri{
+  width: 400px;
+  height: 400px;
+  left: 0;
+}
+.gambar-kanan {
+  width: 450px;
+  height: 450px;
+  right: 0;
+  margin-right: 150px;
 }
