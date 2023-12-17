@@ -113,37 +113,16 @@
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-
-document.addEventListener('DOMContentLoaded', function () {
-            var searchInput = document.getElementById('searchRecipe');
-            var recipes = document.querySelectorAll('.swiper-slide');
-
-            searchInput.addEventListener('input', function () {
-                var searchTerm = searchInput.value.trim().toLowerCase();
-
-                recipes.forEach(function (recipe) {
-                    var recipeTitle = recipe.querySelector('h2').textContent.toLowerCase();
-                    var recipeIngredients = recipe.querySelector('p').textContent.toLowerCase();
-
-                    // Cek apakah judul atau bahan mengandung kata kunci pencarian
-                    if (recipeTitle.includes(searchTerm) || recipeIngredients.includes(searchTerm)) {
-                        recipe.classList.remove('hide');
-                    } else {
-                        recipe.classList.add('hide');
-                    }
-                });
-            });
-        });
-
-
-      var swiper = new Swiper(".mySwiper", {
+      document.addEventListener('DOMContentLoaded', function () {
+    var searchInput = document.getElementById('searchRecipe');
+    var swiper = new Swiper('.mySwiper', {
         slidesPerView: 4,
         spaceBetween: 30,
         freeMode: true,
         cssMode: true,
         navigation: {
-          nextE1: ".swiper-button-next",
-          prevE1: ".swiper-button-prev",
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
           clickable: true,
         },
         pagination: {
@@ -153,6 +132,36 @@ document.addEventListener('DOMContentLoaded', function () {
         mousewheel: true,
         Keyboard: true,
       });
+
+      var recipes = document.querySelectorAll('.swiper-slide');
+
+    searchInput.addEventListener('input', function () {
+        var searchTerm = searchInput.value.trim().toLowerCase();
+        var found = false;
+
+        recipes.forEach(function (recipe, index) {
+            var recipeTitle = recipe.querySelector('h2').textContent.toLowerCase();
+            var recipeIngredients = recipe.querySelector('p').textContent.toLowerCase();
+
+            // Cek apakah judul atau bahan mengandung kata kunci pencarian
+            if (recipeTitle.includes(searchTerm) || recipeIngredients.includes(searchTerm)) {
+                recipe.classList.remove('hide');
+                // Geser slide ke slide pertama jika resep cocok dan belum di slide pertama
+                if (index !== 0 && !found) {
+                    swiper.slideTo(index);
+                }
+                found = true;
+            } else {
+                recipe.classList.add('hide');
+            }
+        });
+
+        // Geser slider kembali ke slide pertama jika tidak ada resep yang cocok
+        if (!found) {
+            swiper.slideTo(0);
+        }
+    });
+});
     </script>
 </body>
 </html>
