@@ -412,6 +412,30 @@ ol {
   margin-bottom: 10px;
 }
 
+.artikel {
+  margin : 100px;
+}
+
+#artikel {
+  color: #5F1419;
+  width: 900px;
+  padding-top: 100px;
+  text-align: center;
+margin-left: 140px;
+font-size: 40px;
+}
+
+#imgartikel{
+  margin-top: 10px;
+  width: 400px;
+  height: 350px;
+  align-items: center;
+  margin-left: 400px;
+}
+
+#article{
+  padding-top: 10px;
+}
 /* .resep {
   width: 450px;
   height: 200px;
